@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "estilo": "Dorada Pampeana",
+        "precio": 8250,
+        "img": "./img/productos/Dorada.jpg"
+    },
+
+    {
+        "id": 2,
+        "estilo": "Ipa",
+        "precio": 950,
+        "img": "./img/productos/Ipa.jpg"
+    },
+
+    {
+        "id": 3,
+        "estilo": "Irish",
+        "precio": 1000,
+        "img": "./img/productos/Irish.jpg"
+    },
+
+    {
+        "id": 4,
+        "estilo": "Porter",
+        "precio": 1250,
+        "img": "./img/productos/Porter.jpg"
+    },
+
+    {
+        "id": 5,
+        "estilo": "Scottish",
+        "precio": 900,
+        "img": "./img/productos/Scottish.jpg"
+    },
+
+    {
+        "id": 6,
+        "estilo": "Stout",
+        "precio": 1200,
+        "img": "./img/productos/Stout.jpg"
+    },
+
+    {
+        "id": 7,
+        "estilo": "Ale",
+        "precio": 1100,
+        "img": "./img/productos/Ale.jpg"
+    },
+
+    {
+        "id": 8,
+        "estilo": "Lager",
+        "precio": 750,
+        "img": "./img/productos/Lager.png"
+    }
+]
