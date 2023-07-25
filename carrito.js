@@ -1,5 +1,5 @@
-function guardarProductosCarrito(produ){
-    localStorage.setItem("carrito", JSON.stringify(produ));   
+function guardarProductosCarrito(produ){    
+    localStorage.setItem("carrito", JSON.stringify(produ));     
 }
 
 function cargarProductosCarrito(){
@@ -58,32 +58,32 @@ function darFuncionalidadCarrito() {
     })
 }
 
-function agregarAlCarrito(id){
+async function agregarAlCarrito(id){
     const carrito = cargarProductosCarrito();        
     if (estaEnElCarrito(id)){           
         let pos = carrito.findIndex(item => item.id === id)
         carrito[pos].cantidad += 1;        
     }
-    else{     
-        fetch('./cervezas.json')  // hago un GET a un archivo local
-        .then((resp) => {
-        if (resp.ok) {
-            return resp.json(); //convierto los objetos de json a javascript
-            } else {            
-                Toastify({
-                    text: "Hubo un error, por favor intente mas tarde",        
-                    duration: 5000,
-                    close: true,
-                    gravity: 'bottom',
-                    stopOnFocus: true,            
-                    }).showToast();
+    else{   
+        try {
+            const resp = await fetch('./cervezas.json');
+            if (resp.ok) {
+                const stock = await resp.json();
+                const producto = stock.find(item => item.id === id);
+                carrito.push(producto);
+                carrito[carrito.length - 1].cantidad = 1;
+            } else {
+                console.log("Hubo un error, por favor intente mas tarde");
             }
-        })
-        .then((stock) => {    
-            const producto = stock.find(item => item.id === id); 
-            carrito.push(producto);                
-            carrito[carrito.length-1].cantidad = 1;                 
-        })       
+        } catch (error) {
+            Toastify({
+                text: "Hubo un error, por favor intente mas tarde",        
+                duration: 5000,
+                close: true,
+                gravity: 'bottom',
+                stopOnFocus: true,            
+                }).showToast();
+        }     
     }       
     guardarProductosCarrito(carrito);
     actualizarBotonCarrito();
