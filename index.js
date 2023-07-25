@@ -15,7 +15,7 @@ function crearCards() {
                 }).showToast();
         }
     })
-    .then((stock) => { 
+    .then((stock) => {         
           stock.forEach(prod => {
                listaProdu.innerHTML += ` <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="card justify-content-center align-items-center border-0" style="width: 18rem; margin: auto auto; align-items: center; margin-bottom: 15px; " >

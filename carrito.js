@@ -34,7 +34,7 @@ function estaEnElCarrito(id){
     return carrito.some(item => item.id === id)
 }
 
-function darFuncionalidadCarrito() {   
+function darFuncionalidadCarrito() {     
     fetch('./cervezas.json')  // hago un GET a un archivo local
     .then((resp) => {
         if (resp.ok) {

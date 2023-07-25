@@ -24,13 +24,13 @@ function mostrarProductosCarrito(){
 
         salida += `</table>`;        
     }
-    else{
+    else{        
         salida = `<div class="alert alert-danger text-center" role="alert">
         No se agregaron productos en el carrito!
         </div>`       
     }
 
-    document.getElementById("carrito").innerHTML = salida;
+    document.getElementById("productos").innerHTML = salida;
 }
 
 mostrarProductosCarrito();
