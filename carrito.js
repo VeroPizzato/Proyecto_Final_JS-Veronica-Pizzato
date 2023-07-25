@@ -73,16 +73,16 @@ async function agregarAlCarrito(id){
                 carrito.push(producto);
                 carrito[carrito.length - 1].cantidad = 1;
             } else {
-                console.log("Hubo un error, por favor intente mas tarde");
+                Toastify({
+                    text: "Hubo un error, por favor intente mas tarde",        
+                    duration: 5000,
+                    close: true,
+                    gravity: 'bottom',
+                    stopOnFocus: true,            
+                }).showToast();               
             }
         } catch (error) {
-            Toastify({
-                text: "Hubo un error, por favor intente mas tarde",        
-                duration: 5000,
-                close: true,
-                gravity: 'bottom',
-                stopOnFocus: true,            
-                }).showToast();
+            console.log("Error al obtener datos: " + error);
         }     
     }       
     guardarProductosCarrito(carrito);
